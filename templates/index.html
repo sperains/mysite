@@ -13,7 +13,7 @@
         <el-button @click="visible = true">Button</el-button>
         <el-dialog :visible.sync="visible" title="添加工作记录">
             <el-form :inline="true" :model="item" class="demo-form-inline" v-for="item in userList">
-              <el-form-item label="姓名111">
+              <el-form-item label="姓名">
                 <el-input v-model="item.user" placeholder="姓名"></el-input>
               </el-form-item>
               <el-form-item label="VD数量">
