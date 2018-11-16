@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.4.9/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.4.9/theme-chalk/fonts/element-icons.ttf">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.4.9/theme-chalk/fonts/element-icons.woff">
+<!-- 引入组件库 -->
+</head>
+<body>
+    <div id="app">
+        <el-button @click="visible = true">Button</el-button>
+        <el-dialog :visible.sync="visible" title="添加工作记录">
+            <el-form :inline="true" :model="item" class="demo-form-inline" v-for="item in userList">
+              <el-form-item label="姓名">
+                <el-input v-model="item.user" placeholder="姓名"></el-input>
+              </el-form-item>
+              <el-form-item label="VD数量">
+                <el-input v-model="item.vdCount" placeholder="VD数量"></el-input>
+              </el-form-item>
+              <el-form-item label="OC数量">
+                <el-input v-model="item.ocCount" placeholder="OC数量"></el-input>
+              </el-form-item>
+            </el-form>
+    </el-dialog>
+  </div>
+</body>
+</html>
+
+<script src="https://cdn.staticfile.org/vue/2.5.17-beta.0/vue.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/element-ui/2.4.9/index.js"></script>
+<script src="https://cdn.staticfile.org/element-ui/2.4.9/locale/zh-CN.js"></script>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: function() {
+            return {
+                visible: true,
+                recordList:[],
+                userList:[],
+                value1: '',
+                value2: '',
+            }
+        },
+        mounted(){
+            let me = this;
+            {#$.ajax({#}
+            {#        url: "/allUser",#}
+            {#        type: "post",#}
+            {#        dataType: "json",#}
+            {#        contentType: "application/json;charset=utf-8",#}
+            {#        success: function (result){#}
+            {#            me.userList = result#}
+            {#        }#}
+            {#    });#}
+        },
+        methods: {
+            onSubmit() {
+                console.log('submit!');
+            }
+        }
+    })
+</script>
