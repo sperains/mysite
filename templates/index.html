@@ -48,15 +48,15 @@
         },
         mounted(){
             let me = this;
-            {#$.ajax({#}
-            {#        url: "/allUser",#}
-            {#        type: "post",#}
-            {#        dataType: "json",#}
-            {#        contentType: "application/json;charset=utf-8",#}
-            {#        success: function (result){#}
-            {#            me.userList = result#}
-            {#        }#}
-            {#    });#}
+            $.ajax({
+                    url: "/allUser",
+                    type: "post",
+                    dataType: "json",
+                    contentType: "application/json;charset=utf-8",
+                    success: function (result){
+                        me.userList = result
+                    }
+                });
         },
         methods: {
             onSubmit() {

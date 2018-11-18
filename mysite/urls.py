@@ -18,6 +18,6 @@ from django.urls import path
 from cmdb import views
 
 urlpatterns = [
-    path("index/", views.index),
+    path("", views.index),
     path("allUser", views.all_user)
 ]
