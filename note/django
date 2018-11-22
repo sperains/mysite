@@ -1,0 +1,11 @@
+
+#创建APP
+    -APP 负责一个具体业务或者一类具体业务的模块
+    -python manage.py createapp app_name
+
+
+
+#Model生成sql数据表的过程
+编辑 models.py 文件，改变模型。
+运行 python manage.py makemigrations 为模型的改变生成迁移文件。
+运行 python manage.py migrate 来应用数据库迁移。
